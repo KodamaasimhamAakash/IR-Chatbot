@@ -5,7 +5,7 @@ User Friendly Chatbot
 
 While Working on Repository only work on Branches.
 
-_Naming of Branch-_
+**_Naming of Branch-_**
 
 Branch naming should be as follows:
 
