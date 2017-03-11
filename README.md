@@ -6,9 +6,10 @@ User Friendly Chatbot
 While Working on Repository only work on Branches.
 
 _Naming of Branch-_
+
 Branch naming should be as follows:
 
-##### **dd-Name_of_teamMate-Name_of_the_work**
+**dd-Name_of_teamMate-Name_of_the_work**
 
 ##### _Example:_
 
