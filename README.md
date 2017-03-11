@@ -14,3 +14,11 @@ Branch naming should be as follows:
 ##### _Example:_
 
 dd-shakthi-GUI  
+
+**_Rules for Commit Messages_**
+
+- When you are working on a file and want to commit write _"WIP filename"_.
+  _WIP_ here means _Work In Progress_.
+- While updating a file write _"Update filename"_ as the _commit message_.
+- When you are done working on a file and want to commit write
+ _"Final filename"_.
