@@ -12,7 +12,7 @@ class App(QMainWindow):
         self.left = 300
         self.height = 300
         self.width = 500
-        self.initUI()
+        self.initUI()  # next method call
 
     def initUI(self):
         self.setWindowTitle(self.title)
@@ -22,5 +22,5 @@ class App(QMainWindow):
 
 if __name__=='__main__':
     app = QApplication(sys.argv)
-    ex = App()
+    ex = App() #calls App class
     sys.exit(app.exec_())
