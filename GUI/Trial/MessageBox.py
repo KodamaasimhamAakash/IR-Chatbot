@@ -12,8 +12,10 @@ class App(QWidget):
         answer = QMessageBox.question(self,'Map','Do you want to add the Link?',QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
         if answer == QMessageBox.Yes:
             print("Yes")
+            exit()
         if answer == QMessageBox.No:
             print("No")
+            exit()
         #self.show()
 
 if __name__=='__main__':
