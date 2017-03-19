@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication,QWidget,QPushButton,QMessageBox
 from PyQt5.QtGui import QIcon
-from PyQT5.QtCore import pyqtSlot
+from PyQt5.QtCore import pyqtSlot
 
 class App(QWidget):
     def __init__(self):
@@ -9,14 +9,14 @@ class App(QWidget):
         self.initUI()
 
     def initUI(self):
-        answer = QMessageBox.question(self,'Map','Do you want to add the Link?',QMessageBox.Yes|QMessageBox.No, QMessageBox.Yes)
+        answer = QMessageBox.question(self,'Map','Do you want to add the Link?',QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
         if answer == QMessageBox.Yes:
             print("Yes")
-        if answer == QMessageBox.No
+        if answer == QMessageBox.No:
             print("No")
         #self.show()
 
- if __name__=='__main__':
-     app = QApplication(sys.argv)
-     ex = App()
-     sys.exit(app.exec_())
+if __name__=='__main__':
+    app = QApplication(sys.argv)
+    ex = App()
+    sys.exit(app.exec_())
