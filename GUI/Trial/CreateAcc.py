@@ -1,7 +1,7 @@
 import sys
 import os
 from PyQt5.QtWidgets import QApplication,QWidget,QMainWindow,QLabel
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon,QPixmap
 from PyQt5.QtCore import Qt
 
 class App(QMainWindow):
@@ -20,11 +20,15 @@ class App(QMainWindow):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left,self.top,self.width,self.height)
         self.statusBar().showMessage(self.statusMessage)
-        welcome = QLabel(self);
-        welcome.setText('Hello There...Please Register Yourself!')
-        welcome.setWordWrap()
+        welcome = QLabel(self)
+        botface = QLabel(self)
+        botlogo = QPixmap('bot.png')
+        welcome.setText('Please Register!')
         welcome.setAlignment(Qt.AlignLeft);
-        #welcome.move(200,40)
+        botface.setPixmap(botlogo)
+        welcome.move(200,40)
+        botface.move(130,35)
+
         self.show()
 
 if __name__=='__main__':
