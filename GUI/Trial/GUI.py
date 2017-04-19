@@ -18,8 +18,6 @@ class App(QMainWindow):
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left,self.top,self.width,self.height)
-
-
         self.statusBar().showMessage(self.statusMessage)
         self.show()
 
