@@ -12,7 +12,7 @@ class App(QMainWindow):
         self.statusMessage = 'Create Account...'
         self.top = 200
         self.left = 550
-        self.height = 300
+        self.height = 400
         self.width = 500
         self.initUI()  # next method call
 
@@ -28,6 +28,8 @@ class App(QMainWindow):
         UserNameTextBox = QLineEdit(self)
         PasswordLabel = QLabel(self)
         PasswordTextBox = QLineEdit(self)
+        ConfirmPasswordLabel = QLabel(self)
+        ConfirmPasswordTextBox = QLineEdit(self)
         confirmButton = QPushButton(self)
 
         # set them all
@@ -37,6 +39,7 @@ class App(QMainWindow):
         botface.setPixmap(botlogo)
         UserNameLabel.setText("UserName: ")
         PasswordLabel.setText("Password: ")
+        ConfirmPasswordLabel.setText("ConfirmPassword: ")
         confirmButton.setText("Confirm")
 
 
@@ -50,7 +53,11 @@ class App(QMainWindow):
         h_box_TextBox.addWidget(UserNameTextBox)
         h_box_TextBox.addStretch()
         h_box_Label.addWidget(PasswordLabel)
+        h_box_Label.addStretch()
+        h_box_Label.addWidget(ConfirmPasswordLabel)
         h_box_TextBox.addWidget(PasswordTextBox)
+        h_box_TextBox.addStretch()
+        h_box_TextBox.addWidget(ConfirmPasswordTextBox)
         v_box.addLayout(h_box_Label)
         v_box.addStretch()
         v_box.addLayout(h_box_TextBox)
@@ -61,9 +68,11 @@ class App(QMainWindow):
         UserNameTextBox.move(300,80)
         PasswordLabel.move(150,130)
         PasswordTextBox.move(300,130)
-        welcome.move(200,40)
-        botface.move(130,35)
-        confirmButton.move(200,200)
+        ConfirmPasswordLabel.move(130,180)
+        ConfirmPasswordTextBox.move(300,180)
+        welcome.move(250,40)
+        botface.move(180,35)
+        confirmButton.move(200,300)
 
         self.show()
 

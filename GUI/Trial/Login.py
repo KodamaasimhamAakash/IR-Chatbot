@@ -61,8 +61,8 @@ class App(QMainWindow):
         UserNameTextBox.move(300,80)
         PasswordLabel.move(150,130)
         PasswordTextBox.move(300,130)
-        welcome.move(200,40)
-        botface.move(130,35)
+        welcome.move(250,40)
+        botface.move(180,35)
         confirmButton.move(200,200)
 
         self.show()
