@@ -28,8 +28,11 @@ class App(QMainWindow):
         UserNameTextBox = QLineEdit(self)
         PasswordLabel = QLabel(self)
         PasswordTextBox = QLineEdit(self)
+        PasswordTextBox.setEchoMode(QLineEdit.Password)
         ConfirmPasswordLabel = QLabel(self)
+        ConfirmPasswordLabel.setFixedWidth(200)
         ConfirmPasswordTextBox = QLineEdit(self)
+        ConfirmPasswordTextBox.setEchoMode(QLineEdit.Password)
         confirmButton = QPushButton(self)
 
         # set them all
@@ -39,7 +42,7 @@ class App(QMainWindow):
         botface.setPixmap(botlogo)
         UserNameLabel.setText("UserName: ")
         PasswordLabel.setText("Password: ")
-        ConfirmPasswordLabel.setText("ConfirmPassword: ")
+        ConfirmPasswordLabel.setText("Confirm Password: ")
         confirmButton.setText("Confirm")
 
 

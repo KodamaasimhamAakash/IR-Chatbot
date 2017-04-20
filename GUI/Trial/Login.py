@@ -28,6 +28,7 @@ class App(QMainWindow):
         UserNameTextBox = QLineEdit(self)
         PasswordLabel = QLabel(self)
         PasswordTextBox = QLineEdit(self)
+        PasswordTextBox.setEchoMode(QLineEdit.Password)
         confirmButton = QPushButton(self)
 
         # set them all
