@@ -40,6 +40,8 @@ class App(QMainWindow):
         welcome.setText('Please Register!')
         welcome.setAlignment(Qt.AlignLeft);
         botface.setPixmap(botlogo)
+        botface.setFixedWidth(100)
+        botface.setFixedHeight(80)
         UserNameLabel.setText("UserName: ")
         PasswordLabel.setText("Password: ")
         ConfirmPasswordLabel.setText("Confirm Password: ")
@@ -74,7 +76,7 @@ class App(QMainWindow):
         ConfirmPasswordLabel.move(130,180)
         ConfirmPasswordTextBox.move(300,180)
         welcome.move(250,40)
-        botface.move(180,35)
+        botface.move(180,10)
         confirmButton.move(200,300)
 
         self.show()

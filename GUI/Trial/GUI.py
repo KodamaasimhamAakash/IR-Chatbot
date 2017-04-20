@@ -1,7 +1,7 @@
 import sys
 import os
-from PyQt5.QtWidgets import QMainWindow,QApplication,QWidget,QVBoxLayout,QPushButton,QMainWindow,QLineEdit
-from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QMainWindow,QApplication,QWidget,QVBoxLayout,QHBoxLayout,QPushButton,QMainWindow,QLineEdit,QLabel
+from PyQt5.QtGui import QIcon,QPixmap
 from PyQt5.QtCore import Qt
 
 class App(QMainWindow):
@@ -24,9 +24,17 @@ class App(QMainWindow):
         # initializations
         Message = QLineEdit(self)
         Message.setFixedWidth(450)
-        Message.move(10,650)
-        Message.
 
+        Enter = QLabel(self)
+        EnterLogo = QPixmap('EnterIcon.png')
+        Enter.setPixmap(EnterLogo)
+        h_box_Message = QHBoxLayout()
+        h_box_Message.addWidget(Message)
+        h_box_Message.addWidget(Enter)
+        h_box_Message.addStretch()
+
+        Message.move(10,650)
+        Enter.move(465,650)
         self.show()
 
 
