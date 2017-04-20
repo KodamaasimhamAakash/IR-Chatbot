@@ -24,6 +24,10 @@ class App(QMainWindow):
         # initializations
         Message = QLineEdit(self)
         Message.setFixedWidth(450)
+        Username = QLabel(self)
+        User = QLabel(self)
+        Userface = QPixmap('smiley_logo.png')
+        User.setPixmap()
 
         Enter = QLabel(self)
         EnterLogo = QPixmap('EnterIcon.png')
