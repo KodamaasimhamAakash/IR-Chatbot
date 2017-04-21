@@ -1,7 +1,7 @@
 import sys
 import os
-from PyQt5.QtWidgets import QMainWindow,QApplication,QWidget,QVBoxLayout,QHBoxLayout,QPushButton,QMainWindow,QLineEdit,QLabel
-from PyQt5.QtGui import QIcon,QPixmap
+from PyQt5.QtWidgets import QMainWindow,QApplication,QWidget,QVBoxLayout,QHBoxLayout,QPushButton,QMainWindow,QLineEdit,QLabel,QFileDialog
+from PyQt5.QtGui import QIcon,QPixmap,QFont
 from PyQt5.QtCore import Qt
 
 class App(QMainWindow):
@@ -22,24 +22,55 @@ class App(QMainWindow):
         #self.statusBar().showMessage(self.statusMessage)
 
         # initializations
+
         Message = QLineEdit(self)
         Message.setFixedWidth(450)
+        Box = QLabel(self)
+        Box.setStyleSheet('background-color: white;')
+        Box.setFixedWidth(150)
+        Box.setFixedHeight(50)
         Username = QLabel(self)
+        Username.setFont(QFont('SansSerif',10))
+        Username.setText('Username')
         User = QLabel(self)
+
         Userface = QPixmap('smiley_logo.png')
-        User.setPixmap()
+        User.setPixmap(Userface)
+        User.setFixedHeight(40)
 
         Enter = QLabel(self)
         EnterLogo = QPixmap('EnterIcon.png')
         Enter.setPixmap(EnterLogo)
         h_box_Message = QHBoxLayout()
+        h_box_User = QHBoxLayout()
         h_box_Message.addWidget(Message)
         h_box_Message.addWidget(Enter)
         h_box_Message.addStretch()
+        h_box_User.addWidget(Username)
+        h_box_User.addWidget(User)
+        h_box_User.addStretch()
 
         Message.move(10,650)
         Enter.move(465,650)
+        Username.move(370,10)
+        User.move(450,10)
+        Box.move(350,5)
+
+        self.fileUserPic()
         self.show()
+
+'''    def fileUserPic(self):   # for selection of Userpicture
+            options = QFileDialog.Options()
+            options |= QFileDialog.DontUseNativeDialog
+            filename, _ = QFileDialog.getOpenFileName(self,'QFileDialog.getOpenFileName()','','All files(*);;Python Files(*.py)' , options = options)
+
+        def saveFileDialog(self):
+            options = QFileDialog.Options()
+            options |= QFileDialog.DontUseNativeDialog
+            fileName, _ = QFileDialog.getSaveFileName(self,"QFileDialog.getSaveFileName()","","All Files (*);;Text Files (*.txt)", options=options)'''
+
+    #def MessageUser(self):
+
 
 
 if __name__=='__main__':
