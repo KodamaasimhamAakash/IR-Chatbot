@@ -1,8 +1,8 @@
 import sys
 import os
-from PyQt5.QtWidgets import QMainWindow,QApplication,QWidget,QVBoxLayout,QHBoxLayout,QPushButton,QMainWindow,QLineEdit,QLabel,QFileDialog
+from PyQt5.QtWidgets import QMainWindow,QApplication,QWidget,QVBoxLayout,QHBoxLayout,QPushButton,QMainWindow,QLineEdit,QLabel,QFileDialog,QPushButton,QAction
 from PyQt5.QtGui import QIcon,QPixmap,QFont
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt,pyqtSlot
 
 class App(QMainWindow):
 
@@ -25,7 +25,7 @@ class App(QMainWindow):
 
         Message = QLineEdit(self)
         Message.setFixedWidth(450)
-        Box = QLabel(self)
+        '''Box = QLabel(self)                              # For Username
         Box.setStyleSheet('background-color: white;')
         Box.setFixedWidth(150)
         Box.setFixedHeight(50)
@@ -36,40 +36,39 @@ class App(QMainWindow):
 
         Userface = QPixmap('smiley_logo.png')
         User.setPixmap(Userface)
-        User.setFixedHeight(40)
+        User.setFixedHeight(40)'''
 
-        Enter = QLabel(self)
-        EnterLogo = QPixmap('EnterIcon.png')
-        Enter.setPixmap(EnterLogo)
+        #Enter = QLabel(self)
+        #EnterLogo = QPixmap('EnterIcon.png')
+        #Enter.setPixmap(EnterLogo)
+        enter = QPushButton('Enter',self)
+        enter.setToolTip('Press to Enter Message')
+        enter.setFixedWidth(100)
+        enter.setShortcut('Enter')
+        enter.clicked.connect(self.on_click)
         h_box_Message = QHBoxLayout()
         h_box_User = QHBoxLayout()
         h_box_Message.addWidget(Message)
-        h_box_Message.addWidget(Enter)
+        h_box_Message.addWidget(enter)
         h_box_Message.addStretch()
-        h_box_User.addWidget(Username)
-        h_box_User.addWidget(User)
+        #h_box_User.addWidget(Username)
+        #h_box_User.addWidget(User)
         h_box_User.addStretch()
 
         Message.move(10,650)
-        Enter.move(465,650)
-        Username.move(370,10)
-        User.move(450,10)
-        Box.move(350,5)
+        enter.move(465,650)
+        #Username.move(370,10)
+        #User.move(450,10)
+        #Box.move(350,5)
 
-        self.fileUserPic()
+        #self.fileUserPic()
+        #self.messageUser()
         self.show()
 
-'''    def fileUserPic(self):   # for selection of Userpicture
-            options = QFileDialog.Options()
-            options |= QFileDialog.DontUseNativeDialog
-            filename, _ = QFileDialog.getOpenFileName(self,'QFileDialog.getOpenFileName()','','All files(*);;Python Files(*.py)' , options = options)
+    @pyqtSlot()
+    def on_click(self):
+        
 
-        def saveFileDialog(self):
-            options = QFileDialog.Options()
-            options |= QFileDialog.DontUseNativeDialog
-            fileName, _ = QFileDialog.getSaveFileName(self,"QFileDialog.getSaveFileName()","","All Files (*);;Text Files (*.txt)", options=options)'''
-
-    #def MessageUser(self):
 
 
 
