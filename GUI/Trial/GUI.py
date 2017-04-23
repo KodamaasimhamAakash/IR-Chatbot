@@ -9,7 +9,7 @@ class App(QMainWindow):
     def __init__(self):
         super().__init__()
         self.title = 'ChatBot'
-        #self.statusMessage = '   Type Your Message...'
+        self.statusMessage = '   Type Your Message...'
         self.top = 200
         self.left = 550
         self.height = 700
@@ -19,7 +19,7 @@ class App(QMainWindow):
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left,self.top,self.width,self.height)
-        #self.statusBar().showMessage(self.statusMessage)
+        self.statusBar().showMessage(self.statusMessage)
 
         # initializations
 
