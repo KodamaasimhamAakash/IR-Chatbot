@@ -1,0 +1,117 @@
+==========================================================================
+======================== LOG =============================================
+=============== Date- 23/04/2017 =========================================
+==========================================================================
+
+B: Hello!
+H: Hi!
+B: Hi!
+H: How are you?
+B: How are you?
+H: I'm Fine!
+B: How are you?
+H: It was a Long day for me!
+B: How are you?
+H: Just Doing Fine!
+B: How are you?
+H: What about you?
+B: I'm Fine!
+H: What your name?
+B: It was a Long day for me!
+H: tell me a joke
+B: tell me a joke
+H: JOKE
+B: JOKE
+H: What is joke?
+B: What is joke?
+H: Meme with dependancies...
+B: Meme with dependancies...
+H: Let's Chat for some time!
+B: What your name?
+H: My name is Shakthi.
+B: My name is Shakthi.
+H: What is your name?
+B: My name is Shakthi.
+H: No your name is ChatBot
+B: What is your name?
+H: Shakthi
+B: No your name is ChatBot
+H: Let's Chat!
+B: What your name?
+H: ChatBot
+B: Let's Chat!
+H: What's your name?
+B: ChatBot
+H: What's your name?
+B: Shakthi
+H: no,your nme is shakthi
+B: Let's Chat!
+H: okay!
+B: Hi!
+H: Hey there!
+B: Hey there!
+H: Do you know me?
+B: Just Doing Fine!
+H: How are You?
+B: What about you?
+H: I'm doing fine!
+B: What your name?
+H: Do you understand Coding?
+B: I'm doing fine!
+H: I think you do know Coding!
+B: I think you do know Coding!
+H: Yea i do...
+B: Yea i do...
+H: What all do you know about me...
+B: What all do you know about me...
+H: I know that you are a human!
+B: Yea i do...
+H: Where in the world do you exist!
+B: Hey there!
+H: Where in the world do you exist!
+B: Where in the world do you exist!
+H: I exist in a place where softwares are built better and together!- The Github
+B: I exist in a place where softwares are built better and together!- The Github
+H: I exist in a place where softwares are built better and together!- The Github
+B: I exist in a place where softwares are built better and together!- The Github
+H: What is your name?
+B: Do you understand Coding?
+H: Do you understand Coding?
+B: Do you understand Coding?
+H: Do you understand Coding?
+B: Do you understand Coding?
+H: Do you understand Coding?
+B: Do you understand Coding?
+H: Yea i do... I am a coder myself!
+B: Where in the world do you exist!
+H: People call it the Github!
+B: I exist in a place where softwares are built better and together!- The Github
+H: People call it the Github!
+B: People call it the Github!
+H: What do you eat/
+B: Do you understand Coding?
+H: What do you eat?
+B: Do you understand Coding?
+H: What do you eat?
+B: What do you eat?
+H: I eat 0's and 1's! ;-)
+B: What's your name?
+H: My name is ChatBot!
+B: What is your name?
+H: My name is ChatBot!
+B: My name is ChatBot!
+H: Well you have a good name!
+B: Well you have a good name!
+H: Of Course i do..
+B: What all do you know about me...
+H: You are cool!
+B: I'm Fine!
+H: You are a coder!
+B: Of Course i do..
+H: What do you know about me?
+B: I know that you are a human!
+H: That's nice.
+B: okay!
+
+=============================================================================
+=============================================================================
