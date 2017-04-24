@@ -44,25 +44,39 @@ def get_words(text):
     wordsList = wordsRegexp.findall(text.lower())
     return Counter(wordsList).items()
 
+def get_Temperature():
+    City_CountryCode = input('H: ').strip()
+    extract = City_CountryCode.split(" ")
+    r = requests.get('http://api.openweathermap.org/data/2.5/weather?q='+extract[0]+','+extract[1]+'&appid=69bad2e73c1bf8a8acef6ce5e7b0ec36')
+    json_object = r.json()
+    temp_k = float(json_object['main']['temp'])
+    temp_c = (temp_k - 273.15)
+    return str("%.2f" % temp_c)
 
 B = 'Hello!'
 while True:
     # output bot's message
     print('B: ' + B)
     # ask for user input; if blank line, exit the loop
+    tempertureSubString = 'what is the temperature today?'
     H = input('H: ').strip()
-    if H == '':
+    if H == tempertureSubString:
+        B_temp = 'Reply back with your City and Country Code seperated with space!'
+        print('B: ' + B_temp)
+        temp = get_Temperature()
+        print('Temperature in area mentioned is :' + temp + " degree Celcius")
+        continue
+
+    if H == 'bye':
         break
+
     # store the association between the bot's message words and the user's response
     words = get_words(B)
 
 #================First API call=================================================
     # implementing wheather api
-    tempertureSubString = "temperature"
-    for string in words:
-        if string.upper() == tempertureSubString.upper():
-            temp = get_Temperature()
-            print(temp)
+
+
 #===============================================================================
 
     words_length = sum([n * len(word) for word, n in words])
