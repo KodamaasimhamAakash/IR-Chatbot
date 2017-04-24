@@ -1,5 +1,8 @@
 import re
 import sqlite3
+import requests
+import wolframalpha
+import webbrowser
 from collections import Counter
 from string import punctuation
 from math import sqrt
@@ -43,15 +46,63 @@ def get_words(text):
     wordsList = wordsRegexp.findall(text.lower())
     return Counter(wordsList).items()
 
+def get_Temperature():
+    City_CountryCode = input('H: ').strip()
+    extract = City_CountryCode.split(" ")
+    r = requests.get('http://api.openweathermap.org/data/2.5/weather?q='+extract[0]+','+extract[1]+'&appid=69bad2e73c1bf8a8acef6ce5e7b0ec36')
+    json_object = r.json()
+    temp_k = float(json_object['main']['temp'])
+    temp_c = (temp_k - 273.15)
+    return str("%.2f" % temp_c)
+
+def get_answers():
+    client = wolframalpha.Client("684TKU-R62VRLL2GJ")
+    Ques1 = H
+    res = client.query(Ques1)
+    answerQues = next(res.results).text
+    return answerQues
+
 
 B = 'Hello!'
+
 while True:
     # output bot's message
     print('B: ' + B)
     # ask for user input; if blank line, exit the loop
+    tempertureSubString = 'temperature'
+
     H = input('H: ').strip()
-    if H == '':
+    if H == 'bye':
         break
+
+
+#================First API call=================================================
+    # implementing wheather api
+    if tempertureSubString in H:
+        B_temp = 'Reply back with your City and Country Code seperated with space!'
+        print('B: ' + B_temp)
+        temp = get_Temperature()
+        print('Temperature in area mentioned is :' + temp + " degree Celcius")
+
+#===============================================================================
+
+#================ Second API call ==============================================
+
+    # implementing wolframalpha api
+
+    if 'what' or 'who' in H:
+        ans = get_answers()
+        print(ans)
+        Ques = H.replace(' ','+')
+        print('B: Do you want to know more? Reply with yes or no.')
+        inputLink = input('H: ')
+        if inputLink == 'yes':
+            webbrowser.open_new("https://api.wolframalpha.com/v1/simple?appid=684TKU-R62VRLL2GJ&i="+Ques+"")
+        else:
+            print('B: '+ B)
+
+#===============================================================================
+
     # store the association between the bot's message words and the user's response
     words = get_words(B)
     words_length = sum([n * len(word) for word, n in words])
