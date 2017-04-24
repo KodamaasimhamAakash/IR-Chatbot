@@ -1,3 +1,5 @@
+#============================= Libraries used ================================
+#=============================================================================
 import re
 import sqlite3
 import requests
@@ -7,6 +9,8 @@ from collections import Counter
 from string import punctuation
 from math import sqrt
 
+#==================== Connection Establishment ===============================
+#=============================================================================
 # initialize the connection to the database
 connection = sqlite3.connect('chatbot.sqlite')
 cursor = connection.cursor()
@@ -17,12 +21,17 @@ create_table_request_list = [
     'CREATE TABLE sentences(sentence TEXT UNIQUE, used INT NOT NULL DEFAULT 0)',
     'CREATE TABLE associations (word_id INT NOT NULL, sentence_id INT NOT NULL, weight REAL NOT NULL)',
 ]
+
+#===================== Table ==================================================
+#==============================================================================
+
 for create_table_request in create_table_request_list:
     try:
         cursor.execute(create_table_request)
     except:
         pass
-
+#===================== Functions ==============================================
+#==============================================================================
 def get_id(entityName, text):
     """Retrieve an entity's unique ID from the database, given its associated text.
     If the row is not already present, it is inserted.
@@ -62,6 +71,8 @@ def get_answers():
     answerQues = next(res.results).text
     return answerQues
 
+#==============================================================================
+#==============================================================================
 
 B = 'Hello!'
 
@@ -77,6 +88,8 @@ while True:
 
 
 #================First API call=================================================
+#===============================================================================
+
     # implementing wheather api
     if tempertureSubString in H:
         B_temp = 'Reply back with your City and Country Code seperated with space!'
@@ -85,11 +98,9 @@ while True:
         print('Temperature in area mentioned is :' + temp + " degree Celcius")
 
 #===============================================================================
-
 #================ Second API call ==============================================
 
     # implementing wolframalpha api
-
     if 'what' or 'who' in H:
         ans = get_answers()
         print(ans)
@@ -99,10 +110,10 @@ while True:
         if inputLink == 'yes':
             webbrowser.open_new("https://api.wolframalpha.com/v1/simple?appid=684TKU-R62VRLL2GJ&i="+Ques+"")
         else:
-            print('B: '+ B)
+            continue
 
 #===============================================================================
-
+#======================== Retrieving from SQLite ==============================#
     # store the association between the bot's message words and the user's response
     words = get_words(B)
     words_length = sum([n * len(word) for word, n in words])
@@ -130,3 +141,6 @@ while True:
     # tell the database the sentence has been used once more, and prepare the sentence
     B = row[1]
     cursor.execute('UPDATE sentences SET used=used+1 WHERE rowid=?', (row[0],))
+    
+#=========================== THE END ===========================================
+#===============================================================================
