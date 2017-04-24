@@ -1,5 +1,6 @@
 import re
 import sqlite3
+import requests
 from collections import Counter
 from string import punctuation
 from math import sqrt
@@ -55,11 +56,14 @@ while True:
     # store the association between the bot's message words and the user's response
     words = get_words(B)
 
+#================First API call=================================================
     # implementing wheather api
     tempertureSubString = "temperature"
-    for string, i in words:
-        if string == tempertureSubString:
-            # call temperature function
+    for string in words:
+        if string.upper() == tempertureSubString.upper():
+            temp = get_Temperature()
+            print(temp)
+#===============================================================================
 
     words_length = sum([n * len(word) for word, n in words])
     sentence_id = get_id('sentence', H)
