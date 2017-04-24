@@ -58,27 +58,23 @@ while True:
     # output bot's message
     print('B: ' + B)
     # ask for user input; if blank line, exit the loop
-    tempertureSubString = 'what is the temperature today?'
+    tempertureSubString = 'temperature'
     H = input('H: ').strip()
-    if H == tempertureSubString:
+    if H == 'bye':
+        break
+
+#================First API call=================================================
+    # implementing wheather api
+    if tempertureSubString in H:
         B_temp = 'Reply back with your City and Country Code seperated with space!'
         print('B: ' + B_temp)
         temp = get_Temperature()
         print('Temperature in area mentioned is :' + temp + " degree Celcius")
         continue
-
-    if H == 'bye':
-        break
+#===============================================================================
 
     # store the association between the bot's message words and the user's response
     words = get_words(B)
-
-#================First API call=================================================
-    # implementing wheather api
-
-
-#===============================================================================
-
     words_length = sum([n * len(word) for word, n in words])
     sentence_id = get_id('sentence', H)
     for word, n in words:
