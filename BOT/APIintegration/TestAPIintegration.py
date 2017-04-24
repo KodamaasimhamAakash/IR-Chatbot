@@ -1,6 +1,7 @@
 import re
 import sqlite3
 import requests
+import wolframalpha
 from collections import Counter
 from string import punctuation
 from math import sqrt
@@ -53,12 +54,21 @@ def get_Temperature():
     temp_c = (temp_k - 273.15)
     return str("%.2f" % temp_c)
 
+def get_answers():
+    client = wolframalpha.Client("684TKU-R62VRLL2GJ")
+    res = client.query(H)
+    answerQues = next(res.results).text
+    return answerQues
+
+
 B = 'Hello!'
 while True:
     # output bot's message
     print('B: ' + B)
     # ask for user input; if blank line, exit the loop
     tempertureSubString = 'temperature'
+    What = 'what'
+    Who = 'who'
     H = input('H: ').strip()
     if H == 'bye':
         break
@@ -73,6 +83,15 @@ while True:
         continue
 #===============================================================================
 
+#================ Second API call ==============================================
+    # implementing wolframalpha api
+    
+    if What or Who in H:
+        ans = get_answers()
+        print(ans)
+        print ('Do you want')
+
+#===============================================================================
     # store the association between the bot's message words and the user's response
     words = get_words(B)
     words_length = sum([n * len(word) for word, n in words])
