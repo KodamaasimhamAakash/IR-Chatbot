@@ -87,7 +87,7 @@ while True:
         break
 
 
-#================First API call=================================================
+#================ First API call ===============================================
 #===============================================================================
 
     # implementing wheather api
@@ -114,6 +114,7 @@ while True:
 
 #===============================================================================
 #======================== Retrieving from SQLite ==============================#
+
     # store the association between the bot's message words and the user's response
     words = get_words(B)
     words_length = sum([n * len(word) for word, n in words])
@@ -141,6 +142,6 @@ while True:
     # tell the database the sentence has been used once more, and prepare the sentence
     B = row[1]
     cursor.execute('UPDATE sentences SET used=used+1 WHERE rowid=?', (row[0],))
-    
+
 #=========================== THE END ===========================================
 #===============================================================================
